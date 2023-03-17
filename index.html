@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>自动播放音乐</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <audio autoplay src="https://music.163.com/song/media/outer/url?id=1943954143"></audio>
+    <img id="play-button" src="https://i.ibb.co/xqMMbCp/20221227195611.png">
+    <script>
+        var music = document.querySelector("audio");
+        var playButton = document.getElementById("play-button");
+
+        playButton.addEventListener("click", function () {
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        });
+    </script>
+</body>
+
+</html>
